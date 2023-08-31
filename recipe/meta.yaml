@@ -46,12 +46,12 @@ test:
     - ppl
 
 about:
-  home: https://www.normaliz.uni-osnabrueck.de
+  home: https://www.sagemath.org/pplpy/
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: This Python package provides a wrapper to the C++ Parma Polyhedra Library (PPL).
-  dev_url: https://gitlab.com/videlec/pplpy
+  dev_url: https://github.com/sagemath/pplpy
 
 extra:
   recipe-maintainers:
