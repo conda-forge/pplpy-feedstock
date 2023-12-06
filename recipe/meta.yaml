@@ -12,7 +12,10 @@ source:
 build:
   number: 0
   skip: true  # [win]
-  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  script:
+    # Needs mem_fun_ref removed in C++17
+    - export CXXFLAGS="$CXXFLAGS -std=c++11"
+    - {{ PYTHON }} -m pip install . -vv --no-build-isolation
 
 requirements:
   build:
