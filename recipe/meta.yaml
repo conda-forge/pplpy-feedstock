@@ -1,5 +1,5 @@
 {% set name = "pplpy" %}
-{% set version = "0.8.9" %}
+{% set version = "0.8.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: db7a3b571d6ef053f75137975e947c3a1c1e45a30bab90eaf215b4e5cc15797e
+  sha256: d42a216c82914dcf4d7c000debc98bb336b8f83e026ba5d952cccd9f8074effd
 
 build:
   number: 0
