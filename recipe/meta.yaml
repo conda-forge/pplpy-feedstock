@@ -10,7 +10,7 @@ source:
   sha256: db7a3b571d6ef053f75137975e947c3a1c1e45a30bab90eaf215b4e5cc15797e
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script:
     # Needs mem_fun_ref removed in C++17
@@ -26,6 +26,7 @@ requirements:
     - cysignals                              # [build_platform != target_platform]
     - gmpy2                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - ppl
