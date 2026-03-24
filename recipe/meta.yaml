@@ -1,5 +1,5 @@
 {% set name = "pplpy" %}
-{% set version = "0.8.9" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,24 +7,24 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: db7a3b571d6ef053f75137975e947c3a1c1e45a30bab90eaf215b4e5cc15797e
+  sha256: 8289c50d680ce3f9eacac666cb4cdbbd8a711959e7cc7cf06f7fdb4035d0cc5d
 
 build:
-  number: 3
-  skip: true  # [win]
+  number: 0
+  skip: true  # [win or py<312]
   script:
-    # Needs mem_fun_ref removed in C++17
-    - export CXXFLAGS="$CXXFLAGS -std=c++11"
-    - export CFLAGS="$CFLAGS -std=c++11"
     - {{ PYTHON }} -m pip install . -vv --no-build-isolation
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - cysignals                              # [build_platform != target_platform]
-    - gmpy2                                  # [build_platform != target_platform]
+    - cython
+    - cysignals
+    - gmpy2
+    - meson
+    - ninja
+    - jinja2
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -34,7 +34,7 @@ requirements:
     - cysignals
     - cython
     - pip
-    - setuptools
+    - meson-python
     - gmp
     - mpfr
     - mpc
