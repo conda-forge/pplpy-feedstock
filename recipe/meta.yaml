@@ -52,6 +52,10 @@ requirements:
 test:
   imports:
     - ppl
+  source_files:
+    - tests/runtests.py
+    - tests/test_variable.py
+    - tests/test_constraint.py
   commands:
     - python tests/runtests.py
 
