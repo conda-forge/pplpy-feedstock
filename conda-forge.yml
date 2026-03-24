@@ -9,5 +9,5 @@ provider:
   osx_arm64: github_actions
   osx_64: github_actions
   linux_64: github_actions
-  linux_ppc64le: github_actions
+  linux_ppc64le: azure
 test: native_and_emulated
