@@ -52,6 +52,8 @@ requirements:
 test:
   imports:
     - ppl
+  commands:
+    - python tests/runtests.py
 
 about:
   home: https://www.sagemath.org/pplpy/
