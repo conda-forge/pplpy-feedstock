@@ -45,23 +45,23 @@ jobs:
           - CONFIG: linux_aarch64_python3.12.____cpython
             UPLOAD_PACKAGES: True
             os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
           - CONFIG: linux_aarch64_python3.13.____cp313
             UPLOAD_PACKAGES: True
             os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
           - CONFIG: linux_aarch64_python3.14.____cp314
             UPLOAD_PACKAGES: True
             os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
           - CONFIG: linux_aarch64_python3.14.____cp314t
             UPLOAD_PACKAGES: True
             os: ubuntu
-            runs_on: ['ubuntu-24.04-arm']
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+            runs_on: ['ubuntu-latest']
+            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
           - CONFIG: linux_ppc64le_python3.12.____cpython
             UPLOAD_PACKAGES: True
             os: ubuntu
@@ -82,38 +82,6 @@ jobs:
             os: ubuntu
             runs_on: ['ubuntu-latest']
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-          - CONFIG: osx_64_python3.12.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.13.____cp313
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.14.____cp314
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_64_python3.14.____cp314t
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-15-intel']
-          - CONFIG: osx_arm64_python3.12.____cpython
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-latest']
-          - CONFIG: osx_arm64_python3.13.____cp313
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-latest']
-          - CONFIG: osx_arm64_python3.14.____cp314
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-latest']
-          - CONFIG: osx_arm64_python3.14.____cp314t
-            UPLOAD_PACKAGES: True
-            os: macos
-            runs_on: ['macos-latest']
     steps:
 
     - name: Checkout code
