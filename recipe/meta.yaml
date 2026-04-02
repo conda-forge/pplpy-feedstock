@@ -17,15 +17,13 @@ build:
 
 requirements:
   build:
-    - python
+    - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython
-    - cysignals
-    - gmpy2
+    - cython                                 # [build_platform != target_platform]
+    - cysignals                              # [build_platform != target_platform]
+    - gmpy2                                  # [build_platform != target_platform]
     - pkg-config
-    - meson
     - ninja
-    - jinja2
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
