@@ -12,8 +12,6 @@ source:
 build:
   number: 0
   skip: true  # [win or py<312]
-  script:
-    - {{ PYTHON }} -m pip install . -vv --no-build-isolation --config-settings=setup-args=--wrap-mode=nofallback -Csetup-args=${MESON_ARGS// / -Csetup-args=} --config-settings=setup-args=--default-library=shared
 
 requirements:
   build:
