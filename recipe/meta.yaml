@@ -1,5 +1,5 @@
 {% set name = "pplpy" %}
-{% set version = "0.8.10" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d42a216c82914dcf4d7c000debc98bb336b8f83e026ba5d952cccd9f8074effd
+  sha256: 8289c50d680ce3f9eacac666cb4cdbbd8a711959e7cc7cf06f7fdb4035d0cc5d
 
 build:
   number: 0
-  skip: true  # [win]
-  script:
-    # Needs mem_fun_ref removed in C++17
-    - export CXXFLAGS="$CXXFLAGS -std=c++11"
-    - export CFLAGS="$CFLAGS -std=c++11"
-    - {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  skip: true  # [win or py<312]
 
 requirements:
   build:
@@ -25,6 +20,8 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - cysignals                              # [build_platform != target_platform]
     - gmpy2                                  # [build_platform != target_platform]
+    - pkg-config
+    - ninja
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -34,7 +31,7 @@ requirements:
     - cysignals
     - cython
     - pip
-    - setuptools
+    - meson-python
     - gmp
     - mpfr
     - mpc
@@ -51,6 +48,12 @@ requirements:
 test:
   imports:
     - ppl
+  source_files:
+    - tests/runtests.py
+    - tests/test_variable.py
+    - tests/test_constraint.py
+  commands:
+    - python tests/runtests.py
 
 about:
   home: https://www.sagemath.org/pplpy/
