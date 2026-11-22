@@ -20,7 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - cysignals                              # [build_platform != target_platform]
     - gmpy2                                  # [build_platform != target_platform]
-    - pkg-config
+    - pkgconf
     - ninja
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
